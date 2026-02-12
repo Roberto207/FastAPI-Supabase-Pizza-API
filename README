@@ -64,8 +64,8 @@ project/
 
 ## 🌐 Deploy
 
-🔗 API: https://sua-api.onrender.com  
-📄 Docs: https://sua-api.onrender.com/docs  
+🔗 API: https://sua-api.onrender.com  #DEFININDO NO MOMENTO
+📄 Docs: https://sua-api.onrender.com/docs  #DEFININDO NO MOMENTO
 🗄 Banco: PostgreSQL (Supabase)
 
 
@@ -104,3 +104,4 @@ uvicorn main:app --reload
 
 ### 7- Acesse o caminho local fornecido
 normalmente http://127.0.0.1:8000/docs
+
