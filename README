@@ -1,0 +1,106 @@
+# 🚀 API de Pedidos | FastAPI + PostgreSQL
+
+
+API REST de sistema de pedidos de pizzaria com  gerenciamento de usuários e pedidos, desenvolvida com FastAPI, autenticação JWT (Oauth2) e banco PostgreSQL hospedado no Supabase.
+
+---
+
+## 📌 Funcionalidades
+
+- ✅ Cadastro de usuários
+- 🔐 Autenticação com JWT (Access Token)
+- CRUD completo
+- 📦 Criação de pedidos
+- ➕ Adição e remoção de itens
+- 🔄 Atualização de status do pedido (PENDENTE, CANCELADO, FINALIZADO)
+- 💰 Cálculo automático do valor total
+- 🗃 Controle de migrations com Alembic
+- 🐘 Integração com PostgreSQL (Supabase)
+
+---
+
+## 🧠 Tecnologias Utilizadas
+
+- Python 3.11+
+- FastAPI
+- SQLAlchemy
+- Alembic
+- PostgreSQL
+- Supabase
+- Pydantic
+- python-jose (JWT)
+
+---
+
+## 🏗 Arquitetura Simplificada
+
+- Cliente → FastAPI → Service Layer → SQLAlchemy → PostgreSQL (Supabase)
+
+---
+
+## Fluxo de autenticação:
+
+- Login → Validação de credenciais → Geração de JWT → Acesso protegido
+
+---
+
+## 📂 Estrutura do Projeto
+project/
+│
+├── app/
+│ ├── models.py
+│ ├── schemas.py
+│ ├── routes
+│ ├── dependencies.py
+│ └── main.py
+│
+├── alembic/
+├── alembic.ini 
+├── requirements.txt
+├── .env.example
+└── README.md
+
+---
+
+## 🌐 Deploy
+
+🔗 API: https://sua-api.onrender.com  
+📄 Docs: https://sua-api.onrender.com/docs  
+🗄 Banco: PostgreSQL (Supabase)
+
+
+---
+
+## ⚙️ Como Rodar Localmente
+
+### 1- Clone o projeto
+
+```bash
+git clone https://github.com/seuusuario/seurepositorio.git
+cd seurepositorio
+---
+
+### 2- Inicie o ambiente virtual 
+python -m venv .venv
+
+---
+
+### 3- Instale as dependencias
+pip install -r requirements.txt
+---
+
+### 4- Configure o env baseado no env.example
+
+---
+
+### 5- Execute as migrations 
+alembic upgrade head
+
+---
+
+### 6- Inicie a aplicacao em seu terminal 
+uvicorn main:app --reload
+---
+
+### 7- Acesse o caminho local fornecido
+normalmente http://127.0.0.1:8000/docs
