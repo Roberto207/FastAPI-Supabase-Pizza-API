@@ -1,0 +1,13 @@
+fastapi 
+uvicorn #gerenciador de multiplos processos
+sqlalchemy #banco de dados
+sqlalchemy_utils #utilidades 
+passlib #criptografia de senhas
+python-jose #gerenciamento de tokens
+python-dotenv #gerenciador de variaveis de ambiente
+python-multipart #upload de arquivos (dEPENDENCIA DO python-jose)
+bcrypt #criptografia (dependencia do passlib)
+psycopg2-binary #driver do postgres
+alembic #migrations do banco de dados
+python-dotenv #gerenciador de variaveis de ambiente
+#comando pra instalar isso tudo: pip install -r requirements.txt
