@@ -1,6 +1,6 @@
 #arquvio pra estruturas,muito parecido com oq temos no modelo,os schemas servem pra definir / padronizar como os dados serao enviados e recebidos pela API
 #os parametros usados nas rotas vao ser validados com base nesses schemas
-from pydantic import BaseModel
+from pydantic import BaseModel,validator
 from typing import Optional
 from sqlalchemy import DateTime
 from datetime import datetime
@@ -45,13 +45,30 @@ class TamanhoItemSchema(str,Enum):
     M = "M"
     G = "G"
     GG = "GG"
-    
+
+class SaborItemSchema(str,Enum):
+    CALABRESA = "CALABRESA"
+    MARGUERITA = "MARGUERITA"
+    PORTUGUESA = "PORTUGUESA"
+    FRANGO = "FRANGO"
+    ATUM = "ATUM"
+    VEGETARIANA = "VEGETARIANA"
+
+
 
 class ItemPedidoschema(BaseModel):
     quantidade : int
-    sabor: str 
+    sabor: SaborItemSchema
     tamanho : TamanhoItemSchema
     preco_unitario : Decimal
+
+    @validator('sabor', pre=True)
+    def upper_sabor(cls, v):
+        return v.upper()
+
+    @validator('tamanho', pre=True)
+    def upper_tamanho(cls, v):
+        return v.upper()
 
     class Config:
         from_attributes = True
