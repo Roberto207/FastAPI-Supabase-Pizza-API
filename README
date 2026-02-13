@@ -65,7 +65,7 @@ project/
 ## 🌐 Deploy
 
 🔗 API: fastapi-supabase-pizza-api-production.up.railway.app
-📄 Docs: fastapi-supabase-pizza-api-production.up.railway.app/docs #isso aqui é o importante 
+📄 Docs: fastapi-supabase-pizza-api-production.up.railway.app/docs #isso aqui é o importante
 🗄 Banco: PostgreSQL (Supabase)
 
 

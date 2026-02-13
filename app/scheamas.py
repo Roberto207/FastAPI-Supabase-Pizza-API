@@ -5,10 +5,10 @@ from typing import Optional
 from sqlalchemy import DateTime
 from datetime import datetime
 from enum import Enum #pra "choicetype"
-from decimal import Decimal # pra dinheiro 
+from decimal import Decimal # pra dinheiro
 
 class UsuarioSchema(BaseModel):
-    email: str #os dois pontos : sao usados pra definir o tipo e nao atribuir valores 
+    email: str #os dois pontos : sao usados pra definir o tipo e nao atribuir valores
     senha: str
     nome: str
     ativo: Optional[bool] = True
@@ -18,9 +18,9 @@ class UsuarioSchema(BaseModel):
         from_attributes = True #pra converter automaticamente os modelos do sqlalchemy em pydantic modelos
 
 class PedidoSchema(BaseModel): # so passar aqui dentro oq for fornecido pelo usuario
-    usuario_id : int 
-    
-    
+    usuario_id : int
+
+
 
 
     class Config:
@@ -45,16 +45,18 @@ class TamanhoItemSchema(str,Enum):
     M = "M"
     G = "G"
     GG = "GG"
-    
+
 
 class ItemPedidoschema(BaseModel):
     quantidade : int
-    sabor: str 
+    sabor: str
     tamanho : TamanhoItemSchema
     preco_unitario : Decimal
 
     class Config:
         from_attributes = True
+
+
 
 
 
@@ -79,6 +81,3 @@ class RespostaPedidoSchema(BaseModel):
 
     class Config:
         from_attributes = True
-    
-    
-
