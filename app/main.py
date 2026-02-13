@@ -3,7 +3,7 @@ from passlib.context import CryptContext #cryptografia de senhas
 from dotenv import load_dotenv #isso é pra importar a variavel de ambiente do arquivo .env  q tem a secret key da criptografia
 import os
 from fastapi.security import OAuth2PasswordBearer
-from database import base, engine
+from app.database import base, engine
 
 
 #comando pra rodar o servidor: uvicorn main:app --reload (rodar no terminal)(roda a variavel app do arquivo 
@@ -31,8 +31,8 @@ bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto") #configuran
 oauth2_schema = OAuth2PasswordBearer(tokenUrl="/auth/login_formula")
 
 
-from auth_routes import auth_router #router = roteador
-from orders_routes import order_router
+from app.auth_routes import auth_router #router = roteador
+from app.orders_routes import order_router
 
 app.include_router(auth_router) #incluindo as rotas de autenticação no app fastapi
 app.include_router(order_router) #incluindo as rotas de ordens no app fast
