@@ -99,9 +99,10 @@ alembic upgrade head
 ---
 
 ### 6- Inicie a aplicacao em seu terminal 
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ---
 
 ### 7- Acesse o caminho local fornecido
 normalmente http://127.0.0.1:8000/docs
+
 
