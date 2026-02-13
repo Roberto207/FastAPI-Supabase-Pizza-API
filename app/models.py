@@ -35,7 +35,7 @@ import alembic #biblioteca usada pra fazer migracoes do banco de dados = adicion
 
 
 from sqlalchemy import Column, Integer, String
-from database import base #importando a base do database pra criar as classes do banco de dados,ou seja, as tabelas do banco de dados
+from app.database import base #importando a base do database pra criar as classes do banco de dados,ou seja, as tabelas do banco de dados
 base = base #definindo a base como a base importada do database,ou seja, as classes criadas aqui serao baseadas nessa base de dados
 
 class Usuario(base): #a classe usuario roda na base e é uma subclasse da classe base que na vdd é uma base de dados e o usuario é a tabelka 
