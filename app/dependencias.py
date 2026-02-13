@@ -1,10 +1,10 @@
-from models import Usuario #usaremos a tabela do usuario pra buscas e pra isso precisamos do db pra sessoes
+from app.models import Usuario #usaremos a tabela do usuario pra buscas e pra isso precisamos do db pra sessoes
 from sqlalchemy.orm import sessionmaker,Session
 from fastapi import Depends,HTTPException 
 from jose import jwt,JWTError #pra decodificacao na  funcao de verificar token 
-from main import SECRET_KEY,ALGORITMH,oauth2_schema
+from app.main import SECRET_KEY,ALGORITMH,oauth2_schema
 import logging
-from database import SessionLocal
+from app.database import SessionLocal
 #IMPORTANTE = DEPENDENCIAS TEM Q SER USADAS COMO PARAMETROS DE FUNCOES E NAO PODEM SER USADAS DENTRO DELAS  
 
 def pegar_sessao(): #funcao que permite fazer alteracoes no banco de dados,toda rota que for fazer uma adicao,mudanca ou remocao no database,precisa dessa funcao como parametro
