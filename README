@@ -65,7 +65,7 @@ project/
 ## 🌐 Deploy
 
 🔗 API: fastapi-supabase-pizza-api-production.up.railway.app
-📄 Docs: https://sua-api.onrender.com/docs  #DEFININDO NO MOMENTO
+📄 Docs: fastapi-supabase-pizza-api-production.up.railway.app/docs #isso aqui é o importante 
 🗄 Banco: PostgreSQL (Supabase)
 
 
@@ -104,6 +104,7 @@ uvicorn app.main:app --reload
 
 ### 7- Acesse o caminho local fornecido
 normalmente http://127.0.0.1:8000/docs
+
 
 
 
