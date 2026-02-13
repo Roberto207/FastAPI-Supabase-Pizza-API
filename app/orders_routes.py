@@ -1,9 +1,9 @@
 #arquivo q tera todas as rotas/ENDPOINTS de comandos/ordens como get,post,delete,put
 from fastapi import APIRouter,Depends,HTTPException, Query
 from sqlalchemy.orm import Session
-from models import Pedido,Usuario,item_pedido
-from scheamas import PedidoSchema,ItemPedidoschema,RespostaPedidoSchema,UsuarioSchema
-from dependencias import pegar_sessao,verificar_token
+from app.models import Pedido,Usuario,item_pedido
+from app.scheamas import PedidoSchema,ItemPedidoschema,RespostaPedidoSchema,UsuarioSchema
+from app.dependencias import pegar_sessao,verificar_token
 from typing import List
 
 order_router = APIRouter(prefix='/orders',tags=['Orders'],dependencies=[Depends(verificar_token)])##criando o roteador de ordens (get,post,etc...),precisamos decifinir o prefixo que ficara 
