@@ -1,15 +1,15 @@
 #arquivo q tera todas as rotas/ENDPOINTS de autenticação
 from fastapi import APIRouter,Depends, HTTPException #criador de roteadores q gerenciam as rotas e o gerenciador de dependencias E o http pra mensagens de erro
-from models import Usuario#usaremos a tabela do usuario pra buscas e pra isso precisamos do db pra sessoes
-from dependencias import pegar_sessao,verificar_token #funcao que utiliza das sessoes pra mexer no database e dps fechar a sessao automatica
-from main import bcrypt_context #importando o contexto de criptografia do main.py
-from scheamas import UsuarioSchema,LoginSchema,DeleteSchema 
+from app.models import Usuario#usaremos a tabela do usuario pra buscas e pra isso precisamos do db pra sessoes
+from app.dependencias import pegar_sessao,verificar_token #funcao que utiliza das sessoes pra mexer no database e dps fechar a sessao automatica
+from app.main import bcrypt_context #importando o contexto de criptografia do main.py
+from app.scheamas import UsuarioSchema,LoginSchema,DeleteSchema 
 from sqlalchemy.orm import Session #importando o formato sessao usado pra interagir com o database 
 from sqlalchemy import delete #deletar coisas da database
 from sqlalchemy import select #selecionar coisas da database 
 from jose import jwt,JWTError #usado pra criacao de jwts 
 from datetime import datetime,timedelta, timezone #usado pra definir tempo de expiracao do token jwt
-from main import ALGORITMH,ACCESS_TOKEN_EXPIRE_MINUTES,SECRET_KEY
+from app.main import ALGORITMH,ACCESS_TOKEN_EXPIRE_MINUTES,SECRET_KEY
 from fastapi.security import OAuth2PasswordRequestForm
 
 
