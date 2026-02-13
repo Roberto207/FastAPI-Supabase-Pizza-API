@@ -81,7 +81,7 @@ async def criar_conta(usuario_schema: UsuarioSchema,session: Session = Depends(p
         novo_usuario = Usuario(nome=usuario_schema.nome,email=usuario_schema.email,senha=senha_criptografada,ativo=usuario_schema.ativo,admin=usuario_schema.admin)
         session.add(novo_usuario)
         session.commit()
-        return {"mensagem": f"usuario cadastrado com sucesso {novo_usuario.email}"}
+        return {"mensagem": f"usuario cadastrado com sucesso {novo_usuario.email},id: {novo_usuario.id}"}
 
 
 
