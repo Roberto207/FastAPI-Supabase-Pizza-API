@@ -1,0 +1,79 @@
+Boa. Agora vamos fazer do jeito certo, sem gambiarra 👇
+
+✅ SIM
+
+Você cria o repositório no GitHub vazio.
+
+⚠️ Importante:
+Não marque:
+
+❌ Add README
+
+❌ Add .gitignore
+
+❌ Add License
+
+Deixa totalmente vazio.
+
+Porque você já tem tudo local.
+
+🚀 Passo a passo completo (primeira vez)
+🔹 1️⃣ Crie o repositório no GitHub
+
+Vá em New repository
+
+Nomeie (ex: fastapi-pedidos-api)
+
+Deixe público
+
+NÃO marque nenhuma opção
+
+Clique em Create
+
+Pronto. Agora vamos pro seu projeto local.
+
+🔹 2️⃣ Dentro da pasta do projeto
+
+Abra o terminal na pasta raiz (onde está seu main.py, README, etc).
+
+Inicializar git:
+git init
+
+🔹 3️⃣ Verificar arquivos
+git status
+
+
+Se .env não aparecer → ótimo
+Se aparecer → arruma o .gitignore antes de continuar
+
+🔹 4️⃣ Adicionar tudo
+git add .
+
+🔹 5️⃣ Criar primeiro commit
+git commit -m "initial commit - fastapi api"
+
+🔹 6️⃣ Conectar ao GitHub
+
+Copie o link do repositório que você criou.
+
+Algo assim:
+
+https://github.com/seuusuario/fastapi-pedidos-api.git
+
+
+Agora rode:
+
+git remote add origin https://github.com/seuusuario/fastapi-pedidos-api.git
+
+🔹 7️⃣ Definir branch principal
+git branch -M main
+
+🔹 8️⃣ Subir
+git push -u origin main
+
+
+Ele pode pedir login/token.
+
+Depois disso…
+
+🎉 Seu projeto estará no GitHub.
