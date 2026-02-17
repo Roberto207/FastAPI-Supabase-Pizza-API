@@ -1,3 +1,4 @@
+ENV PORT=8000
 # 1️⃣ imagem base oficial do Python
 FROM python:3.11 
 
