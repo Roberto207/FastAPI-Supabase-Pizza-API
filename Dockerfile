@@ -1,4 +1,3 @@
-ENV PORT=8000
 # 1️⃣ imagem base oficial do Python
 FROM python:3.11 
 
@@ -16,6 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # 6️⃣ comando para iniciar a API
+ENV PORT=8000
 CMD sh -c "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"
 #CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
