@@ -15,7 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # 6️⃣ comando para iniciar a API
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "start.py"]
+#CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 #🧠 Por que 0.0.0.0?Porque o container precisa expor a API para fora. Se usar 127.0.0.1, ninguém de fora do container acessa.
 
