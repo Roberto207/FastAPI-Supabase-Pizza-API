@@ -78,7 +78,12 @@ async def criar_conta(usuario_schema: UsuarioSchema,session: Session = Depends(p
         raise HTTPException(status_code=400,detail="Email ja cadastrado no sistema") #retorna erro 400 de bad request
     else:
         senha_criptografada = bcrypt_context.hash(usuario_schema.senha) #criptografando a senha usando o bcrypt_context definido no main.py
-        novo_usuario = Usuario(nome=usuario_schema.nome,email=usuario_schema.email,senha=senha_criptografada,ativo=usuario_schema.ativo,admin=usuario_schema.admin)
+        novo_usuario = Usuario(
+            nome=usuario_schema.nome,
+            email=usuario_schema.email,
+            senha=senha_criptografada,
+            ativo=usuario_schema.ativo,
+            admin=usuario_schema.admin)
         session.add(novo_usuario)
         session.commit()
         return {"mensagem": f"usuario cadastrado com sucesso {novo_usuario.email},id: {novo_usuario.id}"}
