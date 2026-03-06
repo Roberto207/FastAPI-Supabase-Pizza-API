@@ -18,7 +18,7 @@ ALGORITMH = os.getenv("ALGORITMH")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
 
 
-app = FastAPI() #so esse comando ja cria uma aba fastapi mas vazia 
+app = FastAPI(title= "API Orders Pizzaria") #so esse comando ja cria uma aba fastapi mas vazia 
 #so importar as rotas dps de criar o app 
 
 base.metadata.create_all(bind=engine) #criando as tabelas do banco de dados,ou seja, criando a estrutura do banco de dados,com base nas classes criadas no models.py,ou seja, as tabelas do banco de dados serao criadas com base nessas classes
